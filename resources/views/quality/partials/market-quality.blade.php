@@ -1,0 +1,4 @@
+<article class="panel quality-panel">
+    <div class="panel-head"><div><h2>Kelengkapan per Pasar</h2><p>Persentase harga positif pada setiap pasar</p></div></div>
+    <div class="market-quality-list">@forelse($marketQuality as $item)@php($percent = $item->total_count > 0 ? ($item->positive_count/$item->total_count)*100 : 0)<div><p><strong>{{ $item->name }}</strong><small>{{ number_format($item->positive_count, 0, ',', '.') }} positif &bull; {{ number_format($item->zero_count, 0, ',', '.') }} nol</small></p><div class="market-quality-meter"><i style="width:{{ min(100, $percent) }}%"></i></div><b class="{{ $percent >= 80 ? 'good' : ($percent >= 60 ? 'warning' : 'bad') }}">{{ number_format($percent, 1, ',', '.') }}%</b></div>@empty<p class="quality-empty">Tidak ada data pasar.</p>@endforelse</div>
+</article>

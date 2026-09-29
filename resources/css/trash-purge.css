@@ -1,0 +1,119 @@
+.trash-purge-zone {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 18px;
+    padding: 17px 18px;
+    border: 1px solid #f2cbd0;
+    border-radius: 14px;
+    background: linear-gradient(105deg, #fff 0%, #fff 58%, #fff6f7 100%);
+    box-shadow: 0 9px 26px rgba(125, 34, 49, .07);
+}
+
+.trash-purge-symbol {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    color: #c42f40;
+    background: #fff0f2;
+    box-shadow: inset 0 0 0 1px #f7d5d9;
+}
+
+.trash-purge-symbol svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.trash-purge-copy span,
+.trash-purge-copy strong {
+    display: block;
+}
+
+.trash-purge-copy span {
+    margin-bottom: 4px;
+    color: #c42f40;
+    font-size: 9px;
+    font-weight: 850;
+    letter-spacing: 1.35px;
+}
+
+.trash-purge-copy strong {
+    color: #102a4d;
+    font-size: 15px;
+}
+
+.trash-purge-copy p {
+    margin: 4px 0 0;
+    color: #687991;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.trash-purge-zone form {
+    margin: 0;
+}
+
+.trash-purge-button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px 0 17px;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    background: linear-gradient(135deg, #c52e41, #a91f32);
+    box-shadow: 0 8px 18px rgba(174, 31, 50, .18);
+    font-size: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.trash-purge-button b {
+    min-width: 31px;
+    padding: 6px 8px;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, .16);
+    font-size: 9px;
+}
+
+.trash-purge-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 11px 22px rgba(174, 31, 50, .24);
+}
+
+.trash-purge-button:disabled {
+    color: #a7b0bd;
+    background: #e8edf3;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+@media (max-width: 760px) {
+    .trash-purge-zone {
+        grid-template-columns: 46px minmax(0, 1fr);
+    }
+
+    .trash-purge-symbol {
+        width: 46px;
+        height: 46px;
+    }
+
+    .trash-purge-zone form {
+        grid-column: 1 / -1;
+    }
+
+    .trash-purge-button {
+        width: 100%;
+    }
+}

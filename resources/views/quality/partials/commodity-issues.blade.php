@@ -1,0 +1,4 @@
+<article class="panel quality-panel">
+    <div class="panel-head"><div><h2>Komoditas dengan Harga Nol Terbanyak</h2><p>Urutan berdasarkan jumlah nilai nol pada filter aktif</p></div></div>
+    <div class="quality-ranking">@forelse($commodityIssues as $item)@php($percent = $item->total_count > 0 ? ($item->zero_count/$item->total_count)*100 : 0)<div><span class="quality-rank">{{ $loop->iteration }}</span><p><strong>{{ $item->name }}</strong><small>{{ $item->category_name }} &bull; {{ number_format($item->zero_count, 0, ',', '.') }} dari {{ number_format($item->total_count, 0, ',', '.') }} data</small></p><div class="mini-progress"><i style="width:{{ min(100, $percent) }}%"></i></div><b>{{ number_format($percent, 1, ',', '.') }}%</b></div>@empty<p class="quality-empty">Tidak ada data pada filter ini.</p>@endforelse</div>
+</article>
